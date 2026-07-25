@@ -19,11 +19,9 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
 
-    - name: Make gradlew executable
-      run: chmod +x gradlew
-
-    - name: Build APK
-      run: ./gradlew assembleDebug
+    # Dùng Gradle cài sẵn trên máy máy ảo GitHub thay vì gradlew
+    - name: Build APK with Gradle
+      run: gradle assembleDebug
 
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4
